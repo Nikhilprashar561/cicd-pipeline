@@ -1,0 +1,19 @@
+services:
+  nodejs-server:
+    image: nikhilprashar/nikhil-test
+    deploy:
+      replicas: 5
+    networks:
+      - nikhil-internal
+  caddy:
+    image: caddy:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks:
+      - nikhil-internal
+
+networks:
+  nikhil-internal:
+    driver: bridge
