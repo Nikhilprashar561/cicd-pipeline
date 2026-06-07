@@ -8,6 +8,7 @@ app.get("/", (req, res) => {
     message: "Server Up and Running",
     success: true,
     Work: "Learning CI CD with GitHub Actions",
+    checking: "Github Actions is Up and Running",
   })
 })
 
