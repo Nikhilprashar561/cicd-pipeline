@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
     checking: "Github Actions is Up and Running",
     whyHealth: "Some How Health Route is Not Working",
     docker: "Docker is Up and Running f🐟",
+    caddy: "up and Running 🚀"
   })
 })
 
