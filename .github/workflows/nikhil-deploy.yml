@@ -35,9 +35,13 @@ jobs:
                 username: ubuntu
                 key: ${{ secrets.PRIVATE_KEY }}
                 script: |
-                    export NVM_DIR="$HOME/.nvm"
-                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-                    cd /home/ubuntu/cicd
-                    git pull origin main
-                    npm install
-                    pm2 restart 0
+                    sudo docker rm -f nikhil-test || true
+                    sudo docker pull nikhilprashar/nikhil-test
+                    sudo docker run -d --name nikhil-test --restart unless-stopped -p 3000:3000 nikhilprashar/nikhil-test
+                    sudo docker image prune -f
+                    # export NVM_DIR="$HOME/.nvm"
+                    # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                    # cd /home/ubuntu/cicd
+                    # git pull origin main
+                    # npm install
+                    # pm2 restart 0
