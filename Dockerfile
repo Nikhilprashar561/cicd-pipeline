@@ -6,4 +6,4 @@ COPY package-lock.json package-lock.json
 
 RUN npm install
 
-CMD ["node", "server"]
+CMD ["node", "server.js"]

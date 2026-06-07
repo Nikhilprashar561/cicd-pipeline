@@ -3,6 +3,7 @@ services:
     image: nikhilprashar/nikhil-test
     deploy:
       replicas: 5
+    restart: unless-stopped
     networks:
       - nikhil-internal
   caddy:
@@ -11,6 +12,9 @@ services:
       - "80:80"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    restart: unless-stopped
+    depends_on:
+      - nodejs-server
     networks:
       - nikhil-internal
 
