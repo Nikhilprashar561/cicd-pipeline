@@ -24,6 +24,7 @@ jobs:
               uses: docker/setup-buildx-action@v4
 
             - name: Docker Build and Push
+              run: |
                 docker build -t nikhilprashar/nikhil-test .
                 docker push nikhilprashar/nikhil-test
 
