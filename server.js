@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
   })
 })
 
+app.get("/health", (req, res) => {
+  return res.json({
+    message: "Health Check Successful"})
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
