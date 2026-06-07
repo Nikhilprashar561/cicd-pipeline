@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
     success: true,
     Work: "Learning CI CD with GitHub Actions",
     checking: "Github Actions is Up and Running",
+    whyHealth: "Some How Health Route is Not Working"
   })
 })
 
